@@ -41,3 +41,8 @@
 /home/felipe/RiderProjects/appmed/appmed/obj/Debug/net7.0/appmed.pdb
 /home/felipe/RiderProjects/appmed/appmed/obj/Debug/net7.0/appmed.genruntimeconfig.cache
 /home/felipe/RiderProjects/appmed/appmed/obj/Debug/net7.0/ref/appmed.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll

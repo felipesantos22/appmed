@@ -24,6 +24,7 @@ namespace appmed.Infrastructure.Context
         public DbSet<Patiente> Patientes { get; set; }
         public DbSet<Speciality> Specialities { get; set; }
         public DbSet<DoctorSpeciality> DoctorSpecialities { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

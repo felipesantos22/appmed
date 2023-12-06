@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>();
 builder.Services.AddScoped<PatienteRepository>();
+builder.Services.AddScoped<EmployeeRepository>();
 
 var app = builder.Build();
 
