@@ -25,24 +25,34 @@
       <Compile Remove="Controller\**" />
       <Compile Remove="Controllers\WeatherForecastController.cs" />
       <Compile Remove="WeatherForecast.cs" />
+      <Compile Remove="Infrastructure\Service\**" />
+      <Compile Remove="Domain\Entities\Drug.cs" />
+      <Compile Remove="Domain\Entities\Nurse.cs" />
+      <Compile Remove="Domain\Entities\Pharmacist.cs" />
+      <Compile Remove="Application\Controllers\WeatherForecastController.cs" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="Controller\**" />
+      <EmbeddedResource Remove="Infrastructure\Service\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Content Remove="Controller\**" />
+      <Content Remove="Infrastructure\Service\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Controller\**" />
+      <None Remove="Infrastructure\Service\**" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-      <Folder Include="Domain\Interfaces\" />
-      <Folder Include="Models\Interfaces\" />
+      <Folder Include="Application\" />
+      <Folder Include="Infrastructure\Mapping\" />
+      <Folder Include="Infrastructure\Repository\" />
+      <Folder Include="Service\Services\" />
+      <Folder Include="Service\Validators\" />
     </ItemGroup>
 
 </Project>

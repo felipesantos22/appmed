@@ -1,6 +1,6 @@
 namespace appmed.Domain.Entities;
 
-public class Prescription
+public class Expertise
 {
     
 }

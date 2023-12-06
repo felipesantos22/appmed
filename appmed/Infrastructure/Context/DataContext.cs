@@ -19,8 +19,6 @@ public class DataContext : DbContext
     }
 
     public DbSet<Doctor> Doctors { get; set; }
-    public DbSet<Drug> Drugs { get; set; }
-    public DbSet<Nurse> Nurses { get; set; }
-    public DbSet<Pharmacist> Pharmacists { get; set; }
-    public DbSet<Prescription> Prescriptions { get; set; }
+    public DbSet<Consultation> Consultations { get; set; }
+    public DbSet<Patiente> Patientes { get; set; }
 }
