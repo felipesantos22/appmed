@@ -27,9 +27,10 @@ public class EmployeeRepository: IEmployee
         return employees;
     }
 
-    public Task<Employee> Show(int id)
+    public async Task<Employee?> Show(int id)
     {
-        throw new NotImplementedException();
+        var employee = await _dataContext.Employees.FirstOrDefaultAsync(c => c.Id == id);
+        return employee;
     }
 
     public Task<Employee> Update(int id, Employee employee)
@@ -37,13 +38,16 @@ public class EmployeeRepository: IEmployee
         throw new NotImplementedException();
     }
 
-    public Task<Employee> Destroy(int id)
+    public async Task<Employee> Destroy(int id)
     {
-        throw new NotImplementedException();
+        var deleteEmployee = await _dataContext.Employees.FirstOrDefaultAsync(c => c.Id == id);
+        _dataContext.Employees.Remove(deleteEmployee);
+        await _dataContext.SaveChangesAsync();
+        return deleteEmployee;
     }
     
     // Function verify user in database
-    public async Task<Employee> ShowEmployee(string name, string password)
+    public async Task<Employee?> ShowEmployee(string name, string password)
     {
         var existingEmployee = await _dataContext.Employees
             .FirstOrDefaultAsync(e => e.Name == name && e.Password == password);

@@ -26,7 +26,6 @@ public class AuthController: ControllerBase
             var tokenResult = TokenService.GenerateToken(authEmployee);
             return Ok(tokenResult);
         }
-
         return BadRequest("Employee not found in the database");
     }
 
