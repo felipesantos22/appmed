@@ -41,4 +41,13 @@ public class EmployeeRepository: IEmployee
     {
         throw new NotImplementedException();
     }
+    
+    // Function verify user in database
+    public async Task<Employee> ShowEmployee(string name, string password)
+    {
+        var existingEmployee = await _dataContext.Employees
+            .FirstOrDefaultAsync(e => e.Name == name && e.Password == password);
+
+        return existingEmployee;
+    }
 }

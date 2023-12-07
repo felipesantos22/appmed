@@ -1,5 +1,6 @@
 using appmed.Domain.Entities;
 using appmed.Infrastructure.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace appmed.Application.Controllers;
@@ -15,6 +16,7 @@ public class EmployeeController: ControllerBase
         _employeeRepository = employeeRepository;
     }
     
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<Employee>> Create([FromBody] Employee employee)
     {
@@ -22,6 +24,7 @@ public class EmployeeController: ControllerBase
         return Ok(newPatiente);
     }
     
+    [Authorize]
     [HttpGet]
     public async Task<ActionResult<List<Employee>>> listarClientes()
     {

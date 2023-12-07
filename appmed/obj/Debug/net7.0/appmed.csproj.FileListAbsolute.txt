@@ -46,3 +46,6 @@
 /home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
 /home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
 /home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

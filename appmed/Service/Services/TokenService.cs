@@ -15,7 +15,7 @@ public class TokenService
         {
             Subject = new System.Security.Claims.ClaimsIdentity(new Claim[]
             {
-                new Claim("employeeId", employee.Id.ToString()),
+                new Claim("Id", employee.Id.ToString()),
             }),
             Expires = DateTime.UtcNow.AddHours(3),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Key),SecurityAlgorithms.HmacSha256Signature)
