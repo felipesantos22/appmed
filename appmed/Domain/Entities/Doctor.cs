@@ -10,4 +10,5 @@ public class Doctor
     public string CRM { get; set; }
     public List<Consultation> Consultations { get; set; } = new List<Consultation>();
     public List<DoctorSpeciality> DoctorSpecialities { get; set; } = new List<DoctorSpeciality>();
+
 }

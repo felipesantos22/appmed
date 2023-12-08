@@ -1,6 +1,6 @@
 namespace appmed.Application.Controllers;
 
-public class ExpertiseController
+public class DoctorSpeciliatyController
 {
     
 }

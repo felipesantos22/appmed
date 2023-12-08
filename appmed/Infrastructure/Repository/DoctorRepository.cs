@@ -1,10 +1,11 @@
 using appmed.Domain.Entities;
+using appmed.Domain.Interfaces;
 using appmed.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace appmed.Infrastructure.Repository;
 
-public class DoctorRepository
+public class DoctorRepository : IDoctor
 {
     private readonly DataContext _dataContext;
 

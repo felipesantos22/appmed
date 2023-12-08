@@ -40,19 +40,18 @@ namespace appmed.Infrastructure.Context
                 .HasForeignKey(e => e.PatienteId)
                 .IsRequired();
 
-            // Configurar o relacionamento muitos-para-muitos entre Doctor e Speciality
             modelBuilder.Entity<DoctorSpeciality>()
                 .HasKey(ds => new { ds.DoctorId, ds.SpecialityId });
 
-            modelBuilder.Entity<DoctorSpeciality>()
-                .HasOne(ds => ds.Doctor)
-                .WithMany(d => d.DoctorSpecialities)
+            modelBuilder.Entity<Doctor>()
+                .HasMany(doctor => doctor.DoctorSpecialities)  
+                .WithOne(ds => ds.Doctor)
                 .HasForeignKey(ds => ds.DoctorId);
 
-            modelBuilder.Entity<DoctorSpeciality>()
-                .HasOne(ds => ds.Speciality)
-                .WithMany(s => s.DoctorSpecialities)
+            modelBuilder.Entity<Speciality>()
+                .HasMany(speciality => speciality.DoctorSpecialities)
+                .WithOne(ds => ds.Speciality)
                 .HasForeignKey(ds => ds.SpecialityId);
-        }
+           }
     }
 }
