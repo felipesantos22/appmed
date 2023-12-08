@@ -32,6 +32,7 @@ public class EmployeeController: ControllerBase
         return Ok(employees);
     }
     
+    [Authorize]
     [HttpGet("{id}")]
     public async Task<ActionResult<Employee>> Show(int id)
     {
@@ -43,6 +44,7 @@ public class EmployeeController: ControllerBase
         return Ok(employee);
     }
     
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<ActionResult<Employee>> Update(int id, [FromBody] Employee employee)
     {
@@ -55,6 +57,7 @@ public class EmployeeController: ControllerBase
         return Ok(employee);
     }
     
+    [Authorize]
     [HttpDelete("{id:int}")]
     public async Task<ActionResult<Employee>> Destroy(int id)
     {

@@ -33,9 +33,13 @@ public class EmployeeRepository: IEmployee
         return employee;
     }
 
-    public Task<Employee> Update(int id, Employee employee)
+    public async Task<Employee> Update(int id, Employee employee)
     {
-        throw new NotImplementedException();
+        var employeeUpdate = await _dataContext.Employees.FirstOrDefaultAsync(c => c.Id == id);
+        employeeUpdate!.Name = employee.Name;
+        employeeUpdate.Password = employee.Password;
+        await _dataContext.SaveChangesAsync();
+        return employeeUpdate;
     }
 
     public async Task<Employee> Destroy(int id)

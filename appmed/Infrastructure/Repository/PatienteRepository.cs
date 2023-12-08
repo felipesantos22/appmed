@@ -23,14 +23,14 @@ public class PatienteRepository : IPatiente
 
     public async Task<List<Patiente>> Index()
     {
-        var patientes = await _dataContext.Patientes.ToListAsync();
-        return patientes;
+        var patient = await _dataContext.Patientes.ToListAsync();
+        return patient;
     }
 
     public async Task<Patiente> Show(int id)
     {
-        var patiente = await _dataContext.Patientes.FirstOrDefaultAsync(p => p.Id == id);
-        return patiente;
+        var patient = await _dataContext.Patientes.FirstOrDefaultAsync(p => p.Id == id);
+        return patient;
     }
 
     public async Task<Patiente> Update(int id, Patiente patiente)
