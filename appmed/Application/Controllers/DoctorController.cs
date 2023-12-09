@@ -16,7 +16,7 @@ public class DoctorController: ControllerBase
         _doctorRepository = doctorRepository;
     }
     
-    [Authorize]
+    
     [HttpPost]
     public async Task<ActionResult<Doctor>> Create([FromBody] Doctor doctor)
     {
@@ -24,7 +24,7 @@ public class DoctorController: ControllerBase
         return Ok(newDoctor);
     }
     
-    [Authorize]
+    
     [HttpGet]
     public async Task<ActionResult<List<Doctor>>> Index()
     {
@@ -32,7 +32,7 @@ public class DoctorController: ControllerBase
         return Ok(doctors);
     }
     
-    [Authorize]
+    
     [HttpGet("{id}")]
     public async Task<ActionResult<Doctor>> Show(int id)
     {
@@ -44,7 +44,7 @@ public class DoctorController: ControllerBase
         return Ok(doctor);
     }
     
-    [Authorize]
+    
     [HttpPut("{id}")]
     public async Task<ActionResult<Doctor>> Update(int id, [FromBody] Doctor doctor)
     {
@@ -57,7 +57,7 @@ public class DoctorController: ControllerBase
         return Ok(doctorUpdate);
     }
     
-    [Authorize]
+    
     [HttpDelete("{id:int}")]
     public async Task<ActionResult<Employee>> Destroy(int id)
     {
@@ -67,6 +67,18 @@ public class DoctorController: ControllerBase
             return NotFound(new { message = "Doctor not found" });
         }
         var deleteDoctor = await _doctorRepository.Destroy(id);
-        return Ok(new {message = "Doctor not found"});
+        return Ok(new {message = "Doctor deleted"});
+    }
+    
+    //Dapper
+    [HttpGet("search")]
+    public async Task<ActionResult<List<Doctor>>> ShowName([FromQuery] string name)
+    {
+        var doctors = await _doctorRepository.ShowName(name);
+        if (doctors == null)
+        {
+            return NotFound(new { message = "Doctor not found" });
+        }
+        return Ok(doctors);
     }
 }

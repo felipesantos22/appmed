@@ -9,5 +9,6 @@ public class Patiente
     public string Name { get; set; }
     public string Age { get; set; }
     public string Cpf { get; set; }
+    
     public List<Consultation> Consultations = new List<Consultation>();
 }

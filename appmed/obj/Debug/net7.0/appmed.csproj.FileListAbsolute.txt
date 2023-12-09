@@ -49,3 +49,6 @@
 /home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
 /home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Dapper.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/MySqlConnector.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Pomelo.EntityFrameworkCore.MySql.dll

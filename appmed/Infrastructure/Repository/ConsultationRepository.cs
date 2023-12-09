@@ -23,7 +23,8 @@ public class ConsultationRepository: IConsultation
 
     public async Task<List<Consultation>> Index()
     {
-        var consultation = await _dataContext.Consultations.ToListAsync();
+        var consultation = await _dataContext.Consultations.Include(c => c.Doctor)
+            .Include(c => c.Patiente).ToListAsync();
         return consultation;
     }
 

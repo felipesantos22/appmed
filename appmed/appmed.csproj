@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Dapper" Version="2.1.24" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.14" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.14"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
@@ -20,6 +21,7 @@
         </PackageReference>
         <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.0.3" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.3" />
     </ItemGroup>
@@ -33,6 +35,21 @@
       <Compile Remove="Domain\Entities\Nurse.cs" />
       <Compile Remove="Domain\Entities\Pharmacist.cs" />
       <Compile Remove="Application\Controllers\WeatherForecastController.cs" />
+      <Compile Remove="Migrations\20231208212417_refresh_migrations.cs" />
+      <Compile Remove="Migrations\20231208212417_refresh_migrations.Designer.cs" />
+      <Compile Remove="Migrations\20231206152724_InitialCreate.cs" />
+      <Compile Remove="Migrations\20231206152724_InitialCreate.Designer.cs" />
+      <Compile Remove="Migrations\20231206155355_CreateTable_Doctor_Speciality.cs" />
+      <Compile Remove="Migrations\20231206155355_CreateTable_Doctor_Speciality.Designer.cs" />
+      <Compile Remove="Migrations\20231206155713_CreateTable_Doctor_Speciality2.cs" />
+      <Compile Remove="Migrations\20231206155713_CreateTable_Doctor_Speciality2.Designer.cs" />
+      <Compile Remove="Migrations\20231206171057_CreateTable_Patiente.cs" />
+      <Compile Remove="Migrations\20231206171057_CreateTable_Patiente.Designer.cs" />
+      <Compile Remove="Migrations\20231206192530_CreateTable_Employee.cs" />
+      <Compile Remove="Migrations\20231206192530_CreateTable_Employee.Designer.cs" />
+      <Compile Remove="Migrations\DataContextModelSnapshot.cs" />
+      <Compile Remove="Migrations\20231209154036_InitialCreate.cs" />
+      <Compile Remove="Migrations\20231209154036_InitialCreate.Designer.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -53,6 +70,7 @@
     <ItemGroup>
       <Folder Include="Application\" />
       <Folder Include="Infrastructure\Mapping\" />
+      <Folder Include="Migrations\" />
       <Folder Include="Service\Validators\" />
     </ItemGroup>
 

@@ -23,7 +23,7 @@ public class SpecialityRepository: ISpeciality
 
     public async Task<List<Speciality>> Index()
     {
-        var speciality = await _dataContext.Specialities.ToListAsync();
+        var speciality = await _dataContext.Specialities.Include(e => e.DoctorSpecialities).ToListAsync();
         return speciality;
     }
 

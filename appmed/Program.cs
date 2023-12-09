@@ -45,6 +45,10 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddDbContext<DataContext>();
 builder.Services.AddScoped<PatienteRepository>();
 builder.Services.AddScoped<EmployeeRepository>();
+builder.Services.AddScoped<DoctorRepository>();
+builder.Services.AddScoped<ConsultationRepository>();
+builder.Services.AddScoped<SpecialityRepository>();
+builder.Services.AddScoped<DoctorSpecialityRepository>();
 
 // Configuração de JWT
 var Key = Encoding.ASCII.GetBytes(appmed.Service.Services.Key.Secret);

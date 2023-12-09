@@ -15,14 +15,19 @@ namespace appmed.Infrastructure.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            // conectar ao pgsql com a string de conexão das configurações do aplicativo
-            options.UseNpgsql(Configuration.GetConnectionString("WebApiDatabase"));
+            // connect to pgsql with connection string from app settings
+            // options.UseNpgsql(Configuration.GetConnectionString("WebApiDatabase"));
+            
+            // connect to mysql with connection string from app settings
+            var connectionString = Configuration.GetConnectionString("WebApiDatabase");
+            options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
 
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Consultation> Consultations { get; set; }
         public DbSet<Patiente> Patientes { get; set; }
         public DbSet<Speciality> Specialities { get; set; }
+        
         public DbSet<DoctorSpeciality> DoctorSpecialities { get; set; }
         public DbSet<Employee> Employees { get; set; }
 

@@ -1,7 +1,9 @@
 using appmed.Domain.Entities;
 using appmed.Domain.Interfaces;
 using appmed.Infrastructure.Context;
+using Dapper;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 
 namespace appmed.Infrastructure.Repository;
 
@@ -23,7 +25,7 @@ public class DoctorRepository : IDoctor
 
     public async Task<List<Doctor>> Index()
     {
-        var doctor = await _dataContext.Doctors.ToListAsync();
+        var doctor = await _dataContext.Doctors.Include(e => e.Consultations).ToListAsync();
         return doctor;
     }
 
@@ -49,6 +51,20 @@ public class DoctorRepository : IDoctor
         _dataContext.Doctors.Remove(deleteDoctor);
         await _dataContext.SaveChangesAsync();
         return deleteDoctor;
+    }
+    
+    // Dapper
+    public async Task<List<Doctor>> ShowName(string name)
+    {
+        using (var connection = new MySqlConnection(_dataContext.Database.GetConnectionString()))
+        {
+            connection.Open();
+            var query = "SELECT * FROM Doctors WHERE Name LIKE @Name";
+            var search = new { Name = $"%{name}%" };
+            var doctors = await connection.QueryAsync<Doctor>(query, search);
+            connection.Close();
+            return doctors.ToList();
+        }
     }
     
 }

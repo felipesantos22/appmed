@@ -30,7 +30,7 @@ public class SpecialityController: ControllerBase
         return Ok(specialitys);
     }
     
-    [Authorize]
+    
     [HttpGet("{id}")]
     public async Task<ActionResult<Speciality>> Show(int id)
     {
@@ -42,7 +42,7 @@ public class SpecialityController: ControllerBase
         return Ok(speciality);
     }
     
-    [Authorize]
+    
     [HttpPut("{id}")]
     public async Task<ActionResult<Speciality>> Update(int id, [FromBody] Speciality speciality)
     {
@@ -55,7 +55,7 @@ public class SpecialityController: ControllerBase
         return Ok(specialityUpdate);
     }
     
-    [Authorize]
+    
     [HttpDelete("{id:int}")]
     public async Task<ActionResult<Speciality>> Destroy(int id)
     {
