@@ -1,5 +1,6 @@
 using appmed.Domain.Entities;
 using appmed.Domain.Interfaces;
+using appmed.Error;
 using appmed.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,8 +15,26 @@ public class ConsultationRepository: IConsultation
         _dataContext = dataContext;
     }
     
+    /*public async Task<Consultation> Create(Consultation consultation)
+    {
+        await _dataContext.Consultations.AddAsync(consultation);
+        await _dataContext.SaveChangesAsync();
+        return consultation;
+    }*/
+    
+    
     public async Task<Consultation> Create(Consultation consultation)
     {
+        var existingDoctor = await _dataContext.Doctors.FindAsync(consultation.DoctorId);
+        if (existingDoctor == null)
+        {
+            throw new ValidationExceptionConsultation("Doctor not found");
+        }
+        var existingPatient = await _dataContext.Patientes.FindAsync(consultation.PatienteId);
+        if (existingPatient == null)
+        {
+            throw new ValidationExceptionConsultation("Patient not found");
+        }
         await _dataContext.Consultations.AddAsync(consultation);
         await _dataContext.SaveChangesAsync();
         return consultation;

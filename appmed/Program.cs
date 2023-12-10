@@ -49,6 +49,8 @@ builder.Services.AddScoped<DoctorRepository>();
 builder.Services.AddScoped<ConsultationRepository>();
 builder.Services.AddScoped<SpecialityRepository>();
 builder.Services.AddScoped<DoctorSpecialityRepository>();
+builder.Services.AddControllers(options =>
+    options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 
 // Configuração de JWT
 var Key = Encoding.ASCII.GetBytes(appmed.Service.Services.Key.Secret);
