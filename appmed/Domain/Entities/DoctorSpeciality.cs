@@ -1,10 +1,15 @@
+using System.Text.Json.Serialization;
+
 namespace appmed.Domain.Entities;
 
 public class DoctorSpeciality
 {
     public int Id { get; set; }
     public int DoctorId { get; set; }
-    public Doctor Doctor { get; set; } = null!;
+    [JsonIgnore]
+    public Doctor Doctor { get; set; }
+    
     public int SpecialityId { get; set; }
-    public Speciality Speciality { get; set; } = null!;
+    [JsonIgnore]
+    public Speciality Speciality { get; set; }
 }

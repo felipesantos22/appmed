@@ -52,3 +52,9 @@
 /home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Dapper.dll
 /home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/MySqlConnector.dll
 /home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Pomelo.EntityFrameworkCore.MySql.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Castle.Core.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/Moq.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/xunit.abstractions.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/xunit.assert.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/xunit.core.dll
+/home/felipe/RiderProjects/appmed/appmed/bin/Debug/net7.0/xunit.execution.dotnet.dll

@@ -34,6 +34,12 @@ namespace appmed.Infrastructure.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Doctor>()
+                .HasIndex(d => d.CRM)
+                .IsUnique();
+            modelBuilder.Entity<Patiente>()
+                .HasIndex(d => d.Cpf)
+                .IsUnique();
+            modelBuilder.Entity<Doctor>()
                 .HasMany(e => e.Consultations)
                 .WithOne(e => e.Doctor)
                 .HasForeignKey(e => e.DoctorId)

@@ -51,13 +51,17 @@ namespace appmed.Migrations
 
                     b.Property<string>("CRM")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(6)
+                        .HasColumnType("varchar(6)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CRM")
+                        .IsUnique();
 
                     b.ToTable("Doctors");
                 });
@@ -68,6 +72,9 @@ namespace appmed.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("SpecialityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.HasKey("DoctorId", "SpecialityId");
@@ -108,13 +115,17 @@ namespace appmed.Migrations
 
                     b.Property<string>("Cpf")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(11)
+                        .HasColumnType("varchar(11)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Cpf")
+                        .IsUnique();
 
                     b.ToTable("Patientes");
                 });

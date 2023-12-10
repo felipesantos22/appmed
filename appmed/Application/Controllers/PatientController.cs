@@ -30,7 +30,7 @@ public class PatientController : ControllerBase
         return Ok(patients);
     }
     
-    [Authorize]
+    
     [HttpGet("{id}")]
     public async Task<ActionResult<Patiente>> Show(int id)
     {
@@ -42,7 +42,7 @@ public class PatientController : ControllerBase
         return Ok(patient);
     }
     
-    [Authorize]
+    
     [HttpPut("{id}")]
     public async Task<ActionResult<Patiente>> Update(int id, [FromBody] Patiente patient)
     {
@@ -55,7 +55,7 @@ public class PatientController : ControllerBase
         return Ok(patientUpdate);
     }
     
-    [Authorize]
+    
     [HttpDelete("{id:int}")]
     public async Task<ActionResult<Patiente>> Destroy(int id)
     {
